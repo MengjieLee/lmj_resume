@@ -1,0 +1,705 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+a {
+    transition: all .3s !important;
+    text-decoration: none;
+    color: #fff;
+}
+
+body {
+    font-size: 14px;
+    font-family: STHeiti, 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+    word-break: keep-all;
+    background-image: url(../images/bg_01.jpg);
+    background-attachment: fixed;
+}
+
+:root {
+    --base_color: #398bd0;
+    --bg_color: #4a4a4a;
+}
+
+.iconfont {
+    padding-right: 5px;
+}
+
+a.button {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 45px;
+    border: 1px solid #fff;
+    margin: 100px auto 200px;
+    line-height: 45px;
+    color: #171717;
+    font-size: 16px;
+    text-align: center;
+}
+
+a.button:before {
+    content: "我的简历";
+    position: absolute;
+    transition: all .3s;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+a.button:after {
+    content: "\21E9";
+    font-size: 30px;
+    position: absolute;
+    transition: all .3s;
+    color: #fff;
+    opacity: 0;
+    left: 0;
+    top: -100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+a.button:hover {
+    background: rgba(66, 66, 66, 1);
+    color: #fff;
+    border-radius: 50px;
+}
+
+a.button:hover:before {
+    top: 100%;
+}
+
+a.button:hover:after {
+    top: 0;
+    opacity: 1;
+}
+
+/*简历页面左板块*/
+.res_head {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    z-index: 99;
+}
+
+.res_head .res_author {
+    position: absolute;
+    top: 90px;
+    right: 15%;
+    text-align: right;
+    color: #fff;
+}
+
+.res_head .author_image {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    padding: 6px;
+    background: #fff;
+    z-index: 9;
+    box-shadow: #E7EEF2 0 0 5px 5px;
+}
+
+.res_head .author_image .img01 {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: 130px 160px;
+    background-position: center 15%;
+    border-radius: 100%;
+}
+
+.res_head h1 {
+    font-size: 30px;
+    line-height: 40px;
+    text-shadow: 2px 5px 8px rgba(0, 0, 0, .5);
+    letter-spacing: 3px;
+    margin-right: 28px;
+    margin-bottom: 10px;
+}
+
+.res_head .res_author p {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+
+.fa {
+    color: #fff;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.gender {
+    margin-right: 15px;
+}
+
+.res_author a.button {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 14px;
+    width: 135px;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    background-color: rgba(87, 199, 91, 0.6);
+    border: 1px solid #fff;
+    margin-top: 10px;
+}
+
+.res_author a.button:before {
+    content: "下载简历到本地"
+}
+
+.res_author a.button:after {
+    content: "\21E9";
+    font-size: 18px;
+}
+
+.res_author a.button:hover {
+    border-radius: 0;
+    background: #fff;
+    border-color: #fff;
+}
+
+.res_author a.button:hover:after {
+    color: #333;
+}
+
+.res_nav {
+    position: absolute;
+    top: 30px;
+    right: 15%;
+    background: rgba(57, 139, 208, .3)
+}
+
+.res_nav ul li {
+    float: left;
+    width: 60px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+}
+
+.res_nav ul li:hover {
+    background: #fff;
+}
+
+.res_nav ul li:hover a {
+    color: var(--base_color);
+}
+
+/*.res_nav ul li a:hover{color:var(--base_color);}*/
+
+/* 侧边栏目录 开始 */
+/*-------main---------*/
+.autoMenu {
+    position: absolute;
+    bottom: 5%;
+    right: 15%;
+    text-align: right;
+}
+
+.autoMenu ul {
+    line-height: 2;
+    overflow-y: auto;
+    background: rgba(57, 139, 208, .3);
+    -webkit-box-shadow: 0 0 10px #CCC;
+    -moz-box-shadow: 0 0 10px #CCC;
+    box-shadow: 0 0 10px #CCC;
+}
+
+.autoMenu ul li {
+    padding-right: 8px;
+}
+
+.autoMenu ul li.active {
+    color: #4a4a4a;
+    background-color: #fff;
+}
+
+.autoMenu ul > li.sub {
+    padding-left: 20px;
+}
+
+.autoMenu ul > li > a {
+    color: #fff;
+}
+
+.autoMenu ul > li.active > a {
+    color: #4a4a4a;
+}
+
+.btn-box {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    position: relative;
+}
+
+.icon-plus-sign {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 4px solid #91ba61;
+    background: #91ba61;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+.icon-plus-sign:before, .icon-plus-sign:after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background: #fff;
+    border-radius: 1px;
+    position: absolute;
+    top: 3px;
+    left: 11.5px;
+}
+
+.icon-plus-sign:after {
+    -webkit-transform: rotate(90deg);
+}
+
+.icon-minus-sign {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 4px solid #ff5370;
+    background: #ff5370;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+.icon-minus-sign:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    border-radius: 1px;
+    position: absolute;
+    left: 3px;
+    top: 11.5px;
+}
+
+/* 侧边栏目录 结束 */
+
+/*简历页面右板块*/
+.res_container {
+    background-color: white;
+    position: relative;
+    left: 40%;
+    width: 60%;
+    top: 0;
+    padding: 10px 70px 0;
+    box-sizing: border-box;
+}
+
+.res_main {
+    padding: 50px 0;
+    border-bottom: 1px solid var(--bg_color);
+}
+
+.res_main:last-child {
+    border: none;
+}
+
+.res_main h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--base_color);
+    line-height: 28px;
+}
+
+.res_main h4 span {
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 200;
+}
+
+.res_title {
+    position: relative;
+    font-size: 24px;
+    line-height: 50px;
+    font-weight: 400;
+    color: var(--bg_color);
+    letter-spacing: 3px;
+}
+
+.res_title:before {
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 13px;
+    background: var(--base_color);
+    height: 24px;
+    width: 4px;
+}
+
+.res_info {
+    color: black;
+    line-height: 24px;
+    margin: 10px 0;
+}
+
+.res_info li{
+    list-style: square;
+    padding-left:2em;
+    text-indent:-2em;
+}
+
+.inner_info li {
+    list-style: none;
+}
+
+.about_link li {
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.about_link li a {
+    padding:6px;
+    color: black;
+}
+
+.about_link li:nth-child(1):hover a{
+    color:#ffffff;
+    background-color:  #4a4a4a;
+}
+
+.about_link li:nth-child(2):hover a{
+    color:#ffffff;
+    background-color: #fca21e;
+}
+
+.about_link li:nth-child(3):hover a{
+    color:#ffffff;
+    background-color: #75fca6;
+}
+
+.about_link li:nth-child(4):hover a{
+    color:#ffffff;
+    background-color: #398bd0;
+}
+
+.about_link li:nth-child(5):hover a{
+    color:#ffffff;
+    background-color: #fc282b;
+}
+
+.r_intend_2em {
+    padding-left:2em;
+    text-indent:0;
+}
+
+.soft_link {
+    color: var(--base_color);
+}
+
+.text_wrapper {
+    padding-left:2em;
+    margin-right: 2em;
+}
+
+.res_contact_btn {
+    overflow: hidden;
+}
+
+.res_contact_btn a {
+    text-decoration: none;
+}
+
+.res_contact_btn a {
+    display: block;
+    float: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+    line-height: 35px;
+    color: white;
+    background: var(--bg_color);
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.res_contact_btn a i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.res_contact_btn a:hover {
+    background: var(--base_color);
+}
+
+.profession_record span i:after {
+    content: "";
+    margin-left: 10px;
+}
+
+/* 滚动固定侧边栏 */
+
+/*我的技能*/
+.res_skill {
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.res_skill li {
+    cursor: pointer;
+    position: relative;
+    height: 25px;
+    background-color: var(--bg_color);
+    color: #fff;
+    letter-spacing: 1px;
+    font: 200 12px/25px Microsoft Yahei;
+    margin-bottom: 5px;
+    z-index: 1
+}
+
+.res_skill li span {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    z-index: 3;
+    display: inline-block;
+    line-height: 25px;
+    text-transform: uppercase
+}
+
+.res_skill li:before {
+    transition: all .3s ease-in;
+    opacity: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--base_color);
+    z-index: 2
+}
+
+.res_skill li:after {
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+    color: #ccc;
+    content: "";
+    display: inline-block;
+    line-height: 25px;
+}
+
+.res_skill li.s100:after {
+    content: "100%";
+}
+
+.res_skill li.s90:after {
+    content: "90%";
+}
+
+.res_skill li.s80:after {
+    content: "80%";
+}
+
+.res_skill li.s70:after {
+    content: "70%";
+}
+
+.res_skill li.s60:after {
+    content: "60%";
+}
+
+.res_skill li.s59:after {
+    content: "59%";
+}
+
+.res_skill li.s40:after {
+    content: "40%";
+}
+
+.res_skill li.s30:after {
+    content: "30%";
+}
+
+.res_skill li.s20:after {
+    content: "20%";
+}
+
+.res_skill li.s10:after {
+    content: "10%";
+}
+
+.res_skill .s100 {
+    width: 97.71428571428571%;
+}
+
+.res_skill .s90 {
+    width: 87.71428571428571%;
+}
+
+.res_skill .s80 {
+    width: 77.71428571428571%;
+}
+
+.res_skill .s70 {
+    width: 67.71428571428571%;
+}
+
+.res_skill .s60 {
+    width: 57.714285714285715%;
+}
+
+.res_skill .s59 {
+    width: 47.714285714285715%;
+}
+
+.res_skill .s40 {
+    width: 37.714285714285715%;
+}
+
+.res_skill .s30 {
+    width: 27.714285714285715%;
+}
+
+.res_skill .s20 {
+    width: 17.714285714285715%;
+}
+
+.res_skill .s10 {
+    width: 7.714285714285714%;
+}
+
+.res_skill li:hover:before {
+    width: 100%;
+    opacity: 1
+}
+
+/*工作案例*/
+.works {
+    background: #f7f7f7;
+    overflow: hidden;
+}
+
+.works a.button:before {
+    content: "More";
+}
+
+.work_list_tab {
+    font-size: 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.work_list_tab ul {
+    display: inline-block;
+    border: 1px solid #666;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.work_list_tab li {
+    display: inline-block;
+    transition: all .3s;
+    color: #666;
+    padding: 8px 30px;
+    font-size: 16px;
+    border-right: 1px solid #666;
+    font-weight: 300;
+    cursor: pointer
+}
+
+.work_list_tab li:last-child {
+    border: none;
+}
+
+.work_list_tab li:hover {
+    background: #999;
+    color: #fff;
+}
+
+.work_list_tab li.act {
+    background: #666;
+    color: #fff
+}
+
+.works_list {
+    overflow: hidden;
+    margin-top: 40px;
+    font-size: 0;
+    text-align: center;
+}
+
+.works_list li {
+    position: relative;
+    width: 16.66666%;
+    display: inline-block;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.works_list li img {
+    display: block;
+    width: 100%;
+    transition: all 1.1s;
+}
+
+.work_list_titlebg {
+    z-index: 1;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .7);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.work_list_titlebg p {
+    text-align: center;
+    margin-top: 40%;
+    font-size: 16px;
+    line-height: 3px;
+}
+
+.works_list li:hover .work_list_titlebg {
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    opacity: 1
+}
+
+.works_list li:hover img {
+    transform: scale(1.5);
+}
